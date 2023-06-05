@@ -6,7 +6,8 @@ using Xaminals.Models;
 
 namespace Xaminals.ViewModels
 {
-   //
+    //
+    [QueryProperty(nameof(Name), "name")]
     public class ElephantDetailPageViewModel : ViewModel
     {
         private string name;

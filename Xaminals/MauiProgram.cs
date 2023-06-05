@@ -65,8 +65,9 @@ public static class MauiProgram
         builder.Services.AddTransient<ElephantDetailPageViewModel>();
         builder.Services.AddTransient<DogDetailPageViewModel>();
         builder.Services.AddTransient<CatDetailPageViewModel>();
-     
-        
+        builder.Services.AddTransient<MonkeyDetailPageViewModel>();
+
+
         return builder;
     }
 }

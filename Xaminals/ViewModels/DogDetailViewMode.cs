@@ -9,7 +9,8 @@ namespace Xaminals.ViewModels
      [QueryProperty(nameof(Name), "name")]
     public class DogDetailPageViewModel : ViewModel
     {
-       
+        private readonly DataSource _source;
+
         public string Name {
             set
             {
@@ -20,15 +21,19 @@ namespace Xaminals.ViewModels
 
         
         public Animal Dog { get; private set; }
-
+        public DogDetailPageViewModel (DataSource source)
+        {
+            _source = source;
+        }
        
         void LoadAnimal(string name)
         {
             try
             {
-              //  Dog = .FirstOrDefault(a => a.Name == name);
-                //
-                
+                Dog = _source.FirstOrDefault(a => a.Name == name);
+                OnPropertyChanged(nameof(Dog));
+
+
             }
             catch (Exception)
             {

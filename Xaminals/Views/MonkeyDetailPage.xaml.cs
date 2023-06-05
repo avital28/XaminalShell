@@ -4,10 +4,10 @@ namespace Xaminals.Views
 {
     public partial class MonkeyDetailPage : ContentPage
     {
-        public MonkeyDetailPage()
+        public MonkeyDetailPage(MonkeyDetailPageViewModel mp)
         {
             InitializeComponent();
-            BindingContext = new MonkeyDetailPageViewModel();
+            BindingContext = mp();
         }
     }
 }

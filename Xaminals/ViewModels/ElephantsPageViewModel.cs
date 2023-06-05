@@ -23,12 +23,19 @@ namespace Xaminals.ViewModels
 
                //write here the neccesary command to pass both the name of the elephant
                //and elepahant object itself to the elephant details page
-            SelectCommand = new Command(async (x) => { });
-
+            SelectCommand = new Command(async (x) => {
+                var navigationParameter = new Dictionary<string, object>
+            {
+                { "Elephant", selectedElephant },
+            };
+                await Shell.Current.GoToAsync($"elephantdetails?name={selectedElephant.Name}", navigationParameter);
+            });
         }
+
+    }
 
        
 
 
     }
-}
+
